@@ -18,3 +18,4 @@ pman = new ProjMan()
 //print project name
 print pman.PROJECTNAME
 ```
+# ProjMan ❤ YIMX
