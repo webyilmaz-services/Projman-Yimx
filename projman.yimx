@@ -1,0 +1,38 @@
+//import modules
+import "json"
+import "files"
+import "stdsx"
+
+//get project.json file and read.
+dev_projFile = fopen("project.json", "r")
+jsonfile = readText(dev_projFile)
+
+
+//create projman class
+class ProjMan{
+	//get vars on json file
+	
+	PROJECTNAME = jsonget(jsonfile,"projectname")
+	PROJECTDESC = jsonget(jsonfile,"projectdesc")
+	PROJMANVER  = jsonget(jsonfile,"projmanver")
+	
+	DEFAULT_PROJMANVER = "1.0.1"
+}
+
+class devProjMan{
+
+	def CreateProject(h_projname,h_projdesc,h_projmanver)
+	{
+	
+		h_projmanver = DEFAULT_PROJMANVER
+		
+		DATA = {
+		"projectname": h_projname,
+		"projectdesc": h_projdesc,
+		"projmanver": h_projmanver
+		}
+		projsondata = jsonencode(DATA)
+		///.. burdan devam edilicek 14 ocak.
+	}
+
+}
