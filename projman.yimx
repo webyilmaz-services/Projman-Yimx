@@ -17,22 +17,29 @@ class ProjMan{
 	PROJMANVER  = jsonget(jsonfile,"projmanver")
 	
 	DEFAULT_PROJMANVER = "1.0.1"
+	
+	PROJ_JSON = "empty"
+	def getProjectJSON()
+	{
+		PROJ_JSON = jsonfile
+	}
 }
 
 class devProjMan{
 
-	def CreateProject(h_projname,h_projdesc,h_projmanver)
+	def devCreateProject(h_projname,h_projdesc,h_projmanver)
 	{
 	
-		h_projmanver = DEFAULT_PROJMANVER
+		this.h_projmanver = DEFAULT_PROJMANVER
 		
 		DATA = {
-		"projectname": h_projname,
-		"projectdesc": h_projdesc,
-		"projmanver": h_projmanver
+		"projectname": this.h_projname,
+		"projectdesc": this.h_projdesc,
+		"projmanver": this.h_projmanver
 		}
 		projsondata = jsonencode(DATA)
-		///.. burdan devam edilicek 14 ocak.
+		print(projsondata)
+		
 	}
 
 }
