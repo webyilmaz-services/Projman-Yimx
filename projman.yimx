@@ -40,10 +40,7 @@ class devProjMan{
 		}
 		projsondata = jsonencode(DATA)
 		print(projsondata)
-			downloader("https://yimx-lang.org/dlserv/projman/project.json", file, def(progress, bytesDownloaded, bytesMax) {
-			bar = "#" * (progress / 2)
-			print sprintf("%-50s %d%% %.2f / %.2f MiB\r", bar, progress, bytesDownloaded / MBYTES, bytesMax / MBYTES)
-			})
+			
 	}
 
 }
