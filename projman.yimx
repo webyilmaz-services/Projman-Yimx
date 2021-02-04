@@ -2,6 +2,7 @@
 import "json"
 import "files"
 import "stdsx"
+import "downloader"
 
 //get project.json file and read.
 dev_projFile = fopen("project.json", "r")
@@ -39,7 +40,13 @@ class devProjMan{
 		}
 		projsondata = jsonencode(DATA)
 		print(projsondata)
-		
+			downloader("https://yimx-lang.org/dlserv/projman/project.json", file, def(progress, bytesDownloaded, bytesMax) {
+			bar = "#" * (progress / 2)
+			print sprintf("%-50s %d%% %.2f / %.2f MiB\r", bar, progress, bytesDownloaded / MBYTES, bytesMax / MBYTES)
+			})
 	}
 
 }
+
+h_devpman = devProjMan()
+h_devpman.devCreateProject()
