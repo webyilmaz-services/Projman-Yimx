@@ -28,6 +28,8 @@ class ProjMan{
 
 class devProjMan{
 
+
+	//test feature dont work.
 	def devCreateProject(h_projname,h_projdesc,h_projmanver)
 	{
 	
@@ -40,10 +42,16 @@ class devProjMan{
 		}
 		projsondata = jsonencode(DATA)
 		print(projsondata)
+		
+		hFPfile = fopen("f/project.json", "i")
+		hFPCurrentFile = fopen("project.json", "i")
+		
+		rename(hFPfile, hFPCurrentFile)
+		fclose(hFPfile)
+		fclose(hFPCurrentFile)
+
 			
 	}
 
 }
 
-h_devpman = devProjMan()
-h_devpman.devCreateProject()
